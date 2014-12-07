@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UAPush.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class LKDeckViewController;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate, UAPushNotificationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) LKDeckViewController *rootViewController;
 
 @end
 

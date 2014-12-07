@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LKDeckViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,6 +15,13 @@
 
 @implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Set up default viewControllers
+    self.window.rootViewController = self.rootViewController;
+    
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -40,6 +48,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (LKDeckViewController *)rootViewController {
+    if (!_rootViewController) {
+        _rootViewController = [[LKDeckViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    return _rootViewController;
 }
 
 @end
